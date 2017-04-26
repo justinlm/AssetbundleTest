@@ -1,0 +1,36 @@
+ManifestFileVersion: 0
+CRC: 1891285611
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: resources/shader/standard.unity3d
+      Dependencies: {}
+    Info_1:
+      Name: resources/textures/pic0.unity3d
+      Dependencies: {}
+    Info_2:
+      Name: resources/textures/pic1.unity3d
+      Dependencies: {}
+    Info_3:
+      Name: resources/materials/cubemat0.unity3d
+      Dependencies:
+        Dependency_0: resources/shader/standard.unity3d
+        Dependency_1: resources/textures/pic0.unity3d
+    Info_4:
+      Name: resources/materials/cubemat1.unity3d
+      Dependencies:
+        Dependency_0: resources/shader/standard.unity3d
+        Dependency_1: resources/textures/pic1.unity3d
+    Info_5:
+      Name: resources/audio/bg1.unity3d
+      Dependencies: {}
+    Info_6:
+      Name: resources/prefab/cube0.unity3d
+      Dependencies:
+        Dependency_0: resources/materials/cubemat0.unity3d
+        Dependency_1: resources/audio/bg1.unity3d
+    Info_7:
+      Name: resources/prefab/cube1.unity3d
+      Dependencies:
+        Dependency_0: resources/materials/cubemat1.unity3d
+        Dependency_1: resources/audio/bg1.unity3d

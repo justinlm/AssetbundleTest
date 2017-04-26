@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 3805236404
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8d275f34d83bec5a306e5dfa2eb69437
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 80729077cb39806c86b5c10073f074fb
+HashAppended: 0
+ClassTypes:
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/ExportRes/Resources/Shader/Standard.shader
+Dependencies: []

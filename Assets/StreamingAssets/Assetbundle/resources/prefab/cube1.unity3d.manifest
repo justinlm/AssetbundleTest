@@ -1,0 +1,34 @@
+ManifestFileVersion: 0
+CRC: 2222826733
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: fc8e22ec519265e7d18ea48d1315051b
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 1ba07dbafd23c3ec7dde5de25dc13b3f
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 33
+  Script: {instanceID: 0}
+- Class: 43
+  Script: {instanceID: 0}
+- Class: 65
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 83
+  Script: {instanceID: 0}
+Assets:
+- Assets/ExportRes/Resources/Prefab/Cube1.prefab
+Dependencies:
+- E:/projects/UnityProjects/Unity5/AssetbundleTest/Assets/StreamingAssets/Assetbundle/resources/materials/cubemat1.unity3d
+- E:/projects/UnityProjects/Unity5/AssetbundleTest/Assets/StreamingAssets/Assetbundle/resources/audio/bg1.unity3d
