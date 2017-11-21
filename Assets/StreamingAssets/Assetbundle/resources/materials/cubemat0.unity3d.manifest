@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1838887433
+CRC: 858667734
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a96963e03b0e16ceb961bc1a87f4f234
+    Hash: 5096f401db30202225be0d8f71ac4c1e
   TypeTreeHash:
     serializedVersion: 2
     Hash: 6e91bf4d7bfc7c90eaa9aea5318d52d8
@@ -18,5 +18,5 @@ ClassTypes:
 Assets:
 - Assets/ExportRes/Resources/Materials/cubemat0.mat
 Dependencies:
-- E:/projects/UnityProjects/Unity5/AssetbundleTest/Assets/StreamingAssets/Assetbundle/resources/textures/pic0.unity3d
 - E:/projects/UnityProjects/Unity5/AssetbundleTest/Assets/StreamingAssets/Assetbundle/resources/shader/standard.unity3d
+- E:/projects/UnityProjects/Unity5/AssetbundleTest/Assets/StreamingAssets/Assetbundle/resources/textures/pic0.unity3d

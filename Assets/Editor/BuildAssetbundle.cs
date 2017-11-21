@@ -2,6 +2,7 @@
 using UnityEditor;
 using System.Collections;
 using System.IO;
+using System.Collections.Generic;
 
 public class BuildAssetbundle : Editor
 {
@@ -26,12 +27,35 @@ public class BuildAssetbundle : Editor
         Pack(PrefabPath);
 
 
-        BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath+ "/Assetbundle", BuildAssetBundleOptions.DeterministicAssetBundle, BuildTarget.Android);
+        BuildPipeline.BuildAssetBundles(Application.streamingAssetsPath+ "/Assetbundle", BuildAssetBundleOptions.DeterministicAssetBundle, BuildTarget.StandaloneWindows);
 
         AssetDatabase.Refresh();
 
         EditorUtility.DisplayDialog("提示", "导出完成", "确定");
     }
+
+    [MenuItem("BuildAssetbundle/BuildAssetBundle")]
+    static public void OpenBuildAssetBundleWindow()
+    {
+        string targetPath = Application.dataPath + "/AssetBundles";
+
+        List<AssetBundleBuild> builds = new List<AssetBundleBuild>();
+        AssetBundleBuild build = new AssetBundleBuild();
+
+        build.assetBundleName = "combine.unity3d";
+        // build.assetNames[0] = "Assets/Resources/mascot.prefab";  
+        build.assetNames = new string[] { "Assets/ExportRes/Resources/Audio/bg1.mp3" }; 
+        builds.Add(build);
+        //打包资源
+        BuildPipeline.BuildAssetBundles(targetPath, BuildAssetBundleOptions.ForceRebuildAssetBundle, BuildTarget.StandaloneWindows);
+
+        //刷新编辑器
+        AssetDatabase.Refresh();
+
+        EditorUtility.DisplayDialog("提示", "导出完成", "确定");
+    }
+
+
 
     private static void Pack(string source)
     {
