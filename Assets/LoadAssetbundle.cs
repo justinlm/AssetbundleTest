@@ -15,17 +15,23 @@ public class LoadAssetbundle : MonoBehaviour {
     AssetBundle manifestBundle = null;
     AssetBundleManifest manifest = null;
 
-    AssetBundle assetBundle = null;
-    AssetBundle[] dependsAssetbundle = null;
-
+    AssetbundleLoader abLoader = null;
+    public static LoadAssetbundle Instance = null;
     private void Start()
     {
+        Instance = this;
+
         //首先加载Manifest文件;
         manifestBundle = AssetBundle.LoadFromFile(Application.streamingAssetsPath
                                                               + "/Assetbundle/Assetbundle");
         manifest = (AssetBundleManifest)manifestBundle.LoadAsset("AssetBundleManifest");
 
         this.mMaterialDict = new Dictionary<string, Material>();
+    }
+
+    public string[] GetABDepends(string abName)
+    {
+        return manifest.GetAllDependencies(abName);
     }
 
     void OnGUI()
@@ -35,24 +41,12 @@ public class LoadAssetbundle : MonoBehaviour {
            
             if (manifestBundle != null)
             {
-                //获取依赖文件列表;
-                string[] cubedepends = manifest.GetAllDependencies("resources/prefab/piaoyi.unity3d");
-                dependsAssetbundle = new AssetBundle[cubedepends.Length];
+                if (abLoader != null)
+                    abLoader = null;
+                abLoader = new AssetbundleLoader("resources/prefab/piaoyi.unity3d");
 
-                for (int index = 0; index < cubedepends.Length; index++)
-                {
-                    //加载所有的依赖文件;
-                    dependsAssetbundle[index] = AssetBundle.LoadFromFile(Application.streamingAssetsPath
-                                                                         + "/Assetbundle/"
-                                                                         + cubedepends[index]);
+                abobj = abLoader.GetAsset() as GameObject;
 
-
-                }
-
-                //加载我们需要的文件;"
-                assetBundle = AssetBundle.LoadFromFile(Application.streamingAssetsPath
-                                                                  + "/Assetbundle/resources/prefab/piaoyi.unity3d");
-                abobj = assetBundle.LoadAsset("piaoyi") as GameObject;
                 if (abobj != null)
                 {
                     obj =  Instantiate(abobj);
@@ -74,15 +68,9 @@ public class LoadAssetbundle : MonoBehaviour {
 
             abobj = null;
 
-            for (int i = 0; i < dependsAssetbundle.Length; ++i)
-            {
-                dependsAssetbundle[i].Unload(false);
-                dependsAssetbundle[i] = null;
-            }
-            dependsAssetbundle = null;
-            assetBundle.Unload(false);
-            assetBundle = null;
             mMaterialDict.Clear();
+
+            abLoader.Unload();
 
             Resources.UnloadUnusedAssets();
             System.GC.Collect();
@@ -123,8 +111,7 @@ public class LoadAssetbundle : MonoBehaviour {
     {
         if (pGObject == null)
             return;
-        //		if(pGObject.name.StartsWith("car") || pGObject.name.StartsWith("Car"))
-        //			return;
+      
         if (pGObject.transform.GetComponent<Renderer>() != null)
         {
             Material _item = null;
@@ -143,7 +130,6 @@ public class LoadAssetbundle : MonoBehaviour {
                 _materials[i] = _material;
             }
             pGObject.GetComponent<Renderer>().sharedMaterials = _materials;
-            //pGObject.renderer.materials = _materials;
         }
         int _count = pGObject.transform.childCount;
         for (int i = 0; i < _count; i++)
