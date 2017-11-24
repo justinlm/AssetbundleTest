@@ -1,0 +1,32 @@
+ManifestFileVersion: 0
+CRC: 3723906938
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ebb45175359bb08f2f3c941eca4a164e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: b2aa7bf2836f86552cc76d14dd8269ff
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 5f742ccbd25717e438dd6fdea4d66bad, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
+Assets:
+- Assets/ExportRes/Resources/Prefab/piaoyi.prefab
+Dependencies:
+- E:/projects/UnityProjects/Unity5/AssetbundleTest/Assets/StreamingAssets/Assetbundle/resources/materials/path_luntai.unity3d
+- E:/projects/UnityProjects/Unity5/AssetbundleTest/Assets/StreamingAssets/Assetbundle/resources/materials/yanhuo_00056.unity3d

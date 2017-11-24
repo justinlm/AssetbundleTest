@@ -1,0 +1,16 @@
+ManifestFileVersion: 0
+CRC: 3340350203
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 2fa7844ee1bb1531c95835756fe61017
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 80729077cb39806c86b5c10073f074fb
+HashAppended: 0
+ClassTypes:
+- Class: 48
+  Script: {instanceID: 0}
+Assets:
+- Assets/ExportRes/Resources/Shader/Mobile-Particle-Add.shader
+Dependencies: []
